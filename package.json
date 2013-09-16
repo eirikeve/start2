@@ -1,0 +1,15 @@
+{
+  "name": "start-2.0",
+  "description": "Nye start.samfundet.no",
+  "dependencies": {
+    "restify": "~2.6.0"
+  },
+  "subdomain": "start2",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  }
+}
