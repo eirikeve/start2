@@ -1,0 +1,41 @@
+.hero h1 {
+  font-size: 800%;
+  margin: 0;
+  padding: 0;
+  color: #1f8dd6;
+  font-weight: 100;
+}
+.hero h1,
+.hero h2 {
+  text-align: center;
+}
+
+.hero h2 {
+  font-weight: 100;
+  font-size: 260%;
+  margin: 0.02em 0 0.8em;
+  color: #666;
+}
+
+.hero-cta {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .hero-cta a {
+    width: 90%;
+    padding: 0.5em 1em;
+  }
+}
+
+.error-container {
+  text-align: center;
+  padding: 0.5em;
+}
+.error {
+  background: lightcoral;
+  border: 2px rgba(139, 0, 0, 0.6) solid;
+  box-shadow: inset 0 0 1em rgba(139, 0, 0, 0.3);
+  display: inline-block;
+  padding: 0.5em 1em;
+}
