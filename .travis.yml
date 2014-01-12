@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.10'
+notifications:
+  email: false
+  irc:
+    channels:
+    - irc.efnet.org#mgweb
+    on_success: never
+    on_failure: always
+deploy:
+  provider: heroku
+  app: start2
+  api_key:
+    secure: gLm/d3dymlO/Itqf+JpSxgt6+PzEnCXekTe9OhgsorhjaNk5ch3U2+52GTF5u1a+c4ktRuFMg/6ba8BdMJzkw77GsTPIprJQuD1dWcicKpeH1xSEvxV8jAmeAHxMJ1SjGc6SieU2oy7jLKRmnPR14LDZohJmKu8boxPpCOoattQ=
