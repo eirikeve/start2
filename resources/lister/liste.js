@@ -17,7 +17,7 @@ var create = function(data, cb) {
         kommentar: data.kommentar,
         olPris: data.olPris,
         kryss: JSON.parse(data.kryss),
-        innskudd: data.innskudd,
+        innskudd: data.innskudd === 'true',
         createdAt: new Date()
       }],
       {safe: true},
