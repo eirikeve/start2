@@ -4,6 +4,7 @@ var hyperglue = require('hyperglue');
 var each = require('lodash.foreach');
 var map = require('lodash.map');
 var find = require('lodash.find');
+var compact = require('lodash.compact');
 var fs = require('fs');
 var typeahead = require('typeahead.js');
 
@@ -66,7 +67,7 @@ brukere.sampledBy(lagre).onValue(function(brukere) {
     'kommentar': kommentar,
     'innskudd': false,
     'olPris': olPris,
-    'kryss': JSON.stringify(kryss)
+    'kryss': JSON.stringify(compact(kryss))
   })
   .done(function(data) {
     window.location.href = '/admin/lister/'+data._id;

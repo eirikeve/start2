@@ -35,7 +35,8 @@
     "bower": "~1.2.8",
     "brfs": "0.0.8",
     "gulp-uglify": "~0.1.0",
-    "debowerify": "~0.5.1"
+    "debowerify": "~0.5.1",
+    "lodash.compact": "~2.4.1"
   },
   "subdomain": "start2",
   "scripts": {
