@@ -51,7 +51,7 @@ server.get('/nbb', ensureAuthenticated, require('./routes/nbb'));
 
 server.all('/admin/*', ensureAdmin);
 
-server.get('/admin', require('./routes/admin/index'));
+server.get('/admin', ensureAdmin, require('./routes/admin/index'));
 
 server.get('/admin/brukere', require('./routes/admin/brukere'));
 
