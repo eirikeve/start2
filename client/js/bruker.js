@@ -10,6 +10,8 @@ var hyperglue = require('hyperglue');
 var sumOl = require('../../resources/lister/sumOl.js');
 var sumPenger = require('../../resources/lister/sumPenger.js');
 var sumKryss = require('../../resources/lister/sumKryss.js');
+var sumToString = require('./sumToString.js');
+
 
 //Disable native behavior of form
 $('#bruker').submit(function(e){
@@ -40,9 +42,9 @@ var createRow = function(liste) {
 
   return hyperglue(rowTemplate, {
     '.dato': moment(liste.createdAt).format('DD/MM - YYYY'),
-    '.ol': liste.innskudd ? '-' : sumOl(kryss, liste) + 'kr',
-    '.penger': sumPenger(kryss) + 'kr',
-    '.sum': sumKryss(kryss, liste) + 'kr',
+    '.ol': liste.innskudd ? '-' : sumToString(sumOl(kryss, liste)),
+    '.penger': sumToString(sumPenger(kryss)),
+    '.sum': sumToString(sumKryss(kryss, liste)),
     '.kommentar': liste.kommentar || ''
   });
 };
@@ -100,7 +102,7 @@ lister.map('.lister')
 lister.map(Boolean).mapError(Boolean).not()
   .assign($('.loader'), 'toggle');
 
-lister.map('.sum').map(function(sum){return sum+'kr';}).assign($('#balance'), 'text');
+lister.map('.sum').map(sumToString).assign($('#balance'), 'text');
 lister.map('.sum').onValue(function(sum) {
   $('#balance').addClass(sum < 400 ? 'svart' : 'hvit');
 });
