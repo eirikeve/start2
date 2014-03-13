@@ -13,7 +13,7 @@ var renderLister = function(lister) {
       return {
         '.kommentar': liste.kommentar,
         '.dato a':  {
-          '_text': moment(liste.createdAt).format('DD/MM - YYYY'),
+          '_text': moment(liste.createdAt).format('D.M.YYYY'),
           'href': 'lister/'+liste._id
         }
       };

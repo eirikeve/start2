@@ -41,7 +41,7 @@ var createRow = function(liste) {
   var kryss = first(liste.kryss);
 
   return hyperglue(rowTemplate, {
-    '.dato': moment(liste.createdAt).format('DD/MM - YYYY'),
+    '.dato': moment(liste.createdAt).format('D.M.YYYY HH:mm'),
     '.ol': liste.innskudd ? '-' : sumToString(sumOl(kryss, liste)),
     '.penger': sumToString(sumPenger(kryss)),
     '.sum': sumToString(sumKryss(kryss, liste)),
