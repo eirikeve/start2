@@ -15,7 +15,7 @@ table, th, tr, td {
 }
 
 table table {
-  height: 1.5em;
+  height: 2.5em;
   &, & tr {
     border: none;
   }
@@ -28,8 +28,8 @@ table table {
 }
 
 tr {
-  line-height: 1.5em;
-  font-size: 0.8em;
+  line-height: 2.624em;
+  font-size: 1em;
 }
 
 td {
@@ -37,11 +37,15 @@ td {
 }
 
 .navn {
+  padding-left: 1%;
   width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ol {
-  width: 25%;
+  width: 30%;
 }
 
 .20 {
@@ -49,5 +53,5 @@ td {
 }
 
 .5, .1 {
-  width: 10%;
+  width: 5%;
 }
