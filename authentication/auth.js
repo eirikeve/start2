@@ -7,7 +7,8 @@ var domain = process.env['SERVER_DOMAIN'] || 'http://localhost:'+port;
 
 passport.use(new GoogleStrategy({
     returnURL: domain + '/auth/google/return',
-    realm: domain
+    realm: domain,
+    stateless: true
   },
   function(identifier, profile, done) {
     var email = profile.emails[0].value;
