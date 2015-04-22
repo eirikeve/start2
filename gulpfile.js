@@ -1,11 +1,22 @@
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
+var browserify = require('browserify');
 var sass = require('gulp-sass');
 var refresh = require('gulp-livereload');
 var lr = require('tiny-lr')();
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var brfs = require('brfs');
+var source = require('vinyl-source-stream');
+var path = require('path');
+
+function build(base, entrypoint) {
+  var bundler = browserify(path.resolve(base, entrypoint));
+  bundler.transform('brfs');
+  bundler.transform('debowerify');
+  return bundler.bundle({debug: true})
+    .pipe(source(entrypoint))
+    .pipe(gulp.dest('./build'));
+}
 
 gulp.task('sass', function(){
   gulp.src(['client/sass/style.scss', 'client/sass/krysseliste.scss'])
@@ -22,53 +33,23 @@ gulp.task('copy-bower', function() {
 });
 
 gulp.task('browserify-nbb', function(){
-  gulp.src('client/js/nbb.js')
-    .pipe(browserify({
-      debug: true,
-      transform: ['brfs', 'debowerify']
-     }))
-    .pipe(gulp.dest('./build'))
-    .pipe(refresh(lr));
+  build('client/js/', 'nbb.js');
 });
 
 gulp.task('browserify-kryss', function(){
-  gulp.src('client/js/kryss.js')
-    .pipe(browserify({
-      debug: true,
-      transform: ['brfs', 'debowerify']
-     }))
-    .pipe(gulp.dest('./build'))
-    .pipe(refresh(lr));
+  build('client/js/', 'kryss.js');
 });
 
 gulp.task('browserify-brukere', function(){
-  gulp.src('client/js/brukere.js')
-    .pipe(browserify({
-      debug: true,
-      transform: ['brfs', 'debowerify']
-     }))
-    .pipe(gulp.dest('./build'))
-    .pipe(refresh(lr));
+  build('client/js/', 'brukere.js');
 });
 
 gulp.task('browserify-bruker', function(){
-  gulp.src('client/js/bruker.js')
-    .pipe(browserify({
-      debug: true,
-      transform: ['brfs', 'debowerify']
-     }))
-    .pipe(gulp.dest('./build'))
-    .pipe(refresh(lr));
+  build('client/js/', 'bruker.js');
 });
 
 gulp.task('browserify-innskudd', function(){
-  gulp.src('client/js/innskudd.js')
-    .pipe(browserify({
-      debug: true,
-      transform: ['brfs', 'debowerify']
-     }))
-    .pipe(gulp.dest('./build'))
-    .pipe(refresh(lr));
+  build('client/js/', 'innskudd.js');
 });
 
 gulp.task('build', function() {

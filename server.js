@@ -92,11 +92,12 @@ server.post('/lister', require('./routes/lister/create'));
 server.get('/auth/google',
   passport.authenticate('google', {
     failureRedirect: '/',
-    failureFlash: true
+    failureFlash: true,
+    scope: 'email'
   })
 );
 
-server.get('/auth/google/return',
+server.get('/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/nbb',
     failureRedirect: '/',
