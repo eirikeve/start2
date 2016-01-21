@@ -104,5 +104,5 @@ lister.map(Boolean).mapError(Boolean).not()
 
 lister.map('.sum').map(sumToString).assign($('#balance'), 'text');
 lister.map('.sum').onValue(function(sum) {
-  $('#balance').addClass(sum < 400 ? 'svart' : 'hvit');
+  $('#balance').addClass(sum < 500 ? 'svart' : 'hvit');
 });
