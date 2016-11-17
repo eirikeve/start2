@@ -1,4 +1,4 @@
-var mongoUrl = process.env['MONGOHQ_URL'] || 'mongodb://localhost:27017/nbb';
+var mongoUrl = process.env['MONGODB_URI'] || 'mongodb://localhost:27017/nbb';
 var redisUrl = require('url').parse(process.env['REDISCLOUD_URL'] || 'redis://localhost:6379');
 var port = process.env['PORT'] || process.argv[2] || 5000;
 var env = process.env['NODE_ENV'] || 'development';
