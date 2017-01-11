@@ -67,6 +67,6 @@ brukere.sampledBy(lagre).onValue(function(brukere) {
     'kryss': JSON.stringify(compact(innskudd))
   })
   .done(function(data) {
-    window.location.href = '/admin/lister/'+data._id;
+    window.location.href = '/admin/lister/'+data.insertedIds[0];
   });
 });

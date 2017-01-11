@@ -24,7 +24,7 @@ var create = function(data, cb) {
       function(err, item) {
         if(err) return cb(err, null);
 
-        cb(null, item[0]);
+        cb(null, item);
       });
     });
   });
