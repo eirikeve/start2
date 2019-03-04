@@ -41,11 +41,11 @@
   "subdomain": "start2",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower install && gulp build && patch-package",
-    "build": "gulp build"
+    "build": "bower install && gulp build && patch-package"
   },
   "version": "0.0.1",
   "engines": {
     "node": "11.10.x"
-  }
+  },
+  "heroku-run-build-script": true
 }
