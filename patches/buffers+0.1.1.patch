@@ -1,0 +1,13 @@
+diff --git a/node_modules/buffers/index.js b/node_modules/buffers/index.js
+index 86a9696..b32f8d4 100644
+--- a/node_modules/buffers/index.js
++++ b/node_modules/buffers/index.js
+@@ -182,7 +182,7 @@ Buffers.prototype.pos = function (i) {
+ Buffers.prototype.get = function get (i) {
+     var pos = this.pos(i);
+ 
+-    return this.buffers[pos.buf].get(pos.offset);
++    return this.buffers[pos.buf][pos.offset];
+ };
+ 
+ Buffers.prototype.set = function set (i, b) {

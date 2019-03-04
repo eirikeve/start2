@@ -33,6 +33,7 @@
     "mongodb": "2.2.11",
     "passport": "0.1.18",
     "passport-google-oauth": "0.2.0",
+    "patch-package": "6.0.5",
     "through": "2.3.8",
     "tiny-lr": "0.0.5",
     "vinyl-source-stream": "1.1.0"
@@ -40,11 +41,11 @@
   "subdomain": "start2",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower install && gulp build",
+    "postinstall": "bower install && gulp build && patch-package",
     "build": "gulp build"
   },
   "version": "0.0.1",
   "engines": {
-    "node": "0.10.x"
+    "node": "11.10.x"
   }
 }
