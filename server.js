@@ -81,11 +81,9 @@ server.get('/brukere/:id/lister', ensureAdminOrUser, require('./routes/brukere/l
 
 // KRYSS API
 
-server.all('/lister/*', ensureAdmin);
+server.get('/lister', ensureAdmin, require('./routes/lister/all'));
 
-server.get('/lister', require('./routes/lister/all'));
-
-server.post('/lister', require('./routes/lister/create'));
+server.post('/lister', ensureAdmin, require('./routes/lister/create'));
 
 // AUTH
 
